@@ -1,0 +1,12 @@
+{
+  "service-specifications/API_COMPANYCODE.edmx": {
+    "directoryName": "company-code-service",
+    "basePath": "/sap/opu/odata/sap/API_COMPANYCODE",
+    "packageName": "ompany-code-service"
+  },
+  "src/edmx/API_COMPANYCODE_SRV.edmx": {
+    "packageName": "api_companycode_srv",
+    "directoryName": "API_COMPANYCODE_SRV",
+    "basePath": "/sap/opu/odata/sap/API_COMPANYCODE_SRV"
+  }
+}
