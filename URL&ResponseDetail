@@ -1,0 +1,13 @@
+Sample API URL:
+1. http://localhost:3000/company/code/id?$filter=CompanyCode eq '1110'
+2. http://localhost:3000/company/code
+
+[
+    {
+        "companyCode": "1110",
+        "companyCodeName": "BestRun UK",
+        "country": "GB",
+        "cityName": "London",
+        "currency": "GBP"
+    }
+]
