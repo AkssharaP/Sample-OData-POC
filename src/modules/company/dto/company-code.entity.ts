@@ -1,10 +1,12 @@
-// // cats.service.ts
-// import { Injectable } from '@nestjs/common';
+export class CompanyCodeEntity
+{
+  companyCode: string;
+  companyCodeName: string;
+  country: string;
+  cityName: string;
+  currency: string;
 
-// @Injectable()
-// export class CompanyEntity
-// {
-
-//    companyCode: number;
-   
-// }
+  constructor(partial: Partial<CompanyCodeEntity>) {
+    Object.assign(this, partial);
+  }
+}

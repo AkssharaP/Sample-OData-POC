@@ -1,4 +1,4 @@
-import { Controller, Get, HttpException } from '@nestjs/common';
+import { Controller, Get, HttpException, Query } from '@nestjs/common';
 import { CompanyCode } from 'services/API_COMPANYCODE_SRV';
 import { CompanyService } from 'src/modules/company/get-company-data.service';
 
@@ -16,6 +16,18 @@ export class CompanyController
   async getCompanyData(): Promise<CompanyCode[]> {
     return await this.companyService
       .getAllCompany()
+      .catch(error => {
+        throw new HttpException(
+          `Failed to get company data - ${error.message}`,
+          500
+        );
+      });
+  }
+
+  @Get('code/id')
+  async getCompanyCodesByCountry(@Query('$filter') filter: string): Promise<CompanyCode[]> {
+    return await this.companyService
+      .getCompanyCodesByCountry(filter)
       .catch(error => {
         throw new HttpException(
           `Failed to get company data - ${error.message}`,
