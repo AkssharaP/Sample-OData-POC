@@ -1,11 +1,14 @@
 import { Controller, Get, HttpException, Query } from '@nestjs/common';
 import { CompanyCode } from 'services/API_COMPANYCODE_SRV';
 import { CompanyService } from 'src/modules/company/get-company-data.service';
+import { ODataService } from 'src/modules/odata/odata.service';
 
 @Controller('company')
 export class CompanyController 
 {
-  constructor(private companyService: CompanyService) {}
+  constructor(private companyService: CompanyService,
+    private readonly odataService: ODataService
+  ) {}
 
   @Get()
   findAll(): string {
